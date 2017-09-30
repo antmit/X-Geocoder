@@ -1,4 +1,4 @@
-# Project Title
+# Geocoder
 
 This is a geocoding service that caches and fetches results from the Google and HERE geocoding services.  It is implemented
 as a WSGI app.
