@@ -9,11 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Python 2.7.10
-```
+Geocoder was built and tested with Python 2.7.10.  For the best compatibility, please use Python 2.7.10
 
 ### Installing
 
@@ -60,12 +56,13 @@ For ease of development, we recommend using the --reload flag to gunicorn so tha
 API_KEY_GOOGLE_GEOCODING=YOUR_DATA_HERE API_HERE_APP_CODE=YOUR_DATA_HERE API_HERE_APP_ID=YOUR_DATA_HERE gunicorn --reload geocoder.app
 ```
 
-### Available routes
+### Available routes, Sample usage
 
 After the service is started, the following routes are available
 
-/v1/geocode/json - address is a required query parameter in which an encoded address is supplied.
-For example: /v1/geocode/json?address=425+Market+St,+San+Francisco,+CA+94105
+GET /v1/geocode/json - address is a required query parameter in which an encoded address is supplied.
+
+For example: GET /v1/geocode/json?address=425+Market+St,+San+Francisco,+CA+94105
 
 will return a response like
 ```
@@ -75,6 +72,8 @@ will return a response like
     "lng": -122.3983658
 }
 ```
+
+Be aware that by default, gunicorn initializes the WSGI server to listen on port 8000.
 
 ## Built With
 
